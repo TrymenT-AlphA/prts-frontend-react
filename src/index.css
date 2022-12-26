@@ -1,13 +1,13 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/**
+ * Copyright ©2022-2023 Alice Remake, All Rights Reserved.
+ *
+ * global style sheet
+ *
+ * @summary global style sheet
+ * @author Alice Remake
+ *
+ * Created at     : 2022-12-27 00:32:40 
+ * Last modified  : 2022-12-27 00:32:55
+ */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* add some global styles here */
