@@ -7,10 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:30:46 
- * Last modified  : 2022-12-27 00:31:52
+ * Last modified  : 2022-12-27 08:59:58
  */
 
+import useMdui from "../../hooks/useMdui";
+
 function ItemIcon(props) {
+  useMdui([]);
+  
   return (
     <i {...props} className={`${props.className} mdui-icon material-icons`}>
       &#xe151;

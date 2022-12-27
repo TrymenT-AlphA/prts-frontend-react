@@ -7,7 +7,272 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:32:40 
- * Last modified  : 2022-12-27 00:32:55
+ * Last modified  : 2022-12-27 18:20:23
  */
 
 /* add some global styles here */
+
+/* tag */
+.tag {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+/* opacity */
+.opacity-0 {
+  opacity: 0 !important;
+}
+.opacity-1 {
+  opacity: 0.1 !important;
+}
+.opacity-2 {
+  opacity: 0.2 !important;
+}
+.opacity-3 {
+  opacity: 0.3 !important;
+}
+.opacity-4 {
+  opacity: 0.4 !important;
+}
+.opacity-5 {
+  opacity: 0.5 !important;
+}
+.opacity-6 {
+  opacity: 0.6 !important;
+}
+.opacity-7 {
+  opacity: 0.7 !important;
+}
+.opacity-8 {
+  opacity: 0.8 !important;
+}
+.opacity-9 {
+  opacity: 0.9 !important;
+}
+
+/* color */
+.mission_levelname {
+  color: #ffde00;
+}
+.mission_number {
+  color: #ffde00;
+}
+.tu_kw {
+  color: #0098dc;
+}
+.tu_imp {
+  color: #ff0000;
+}
+.cc_vup {
+  color: #0098dc;
+}
+.cc_vdown {
+  color: #ff6237;
+}
+.cc_rem {
+  color: #f49800;
+}
+.cc_kw {
+  color: #00b0ff;
+}
+.cc_pn {
+  color: #ff0000; /*! undefined */
+}
+.cc_talpu {
+  color: #ff0000; /*! undefined */
+}
+.ba_vup {
+  color: #0098dc;
+}
+.ba_vdown {
+  color: #ff6237;
+}
+.ba_rem {
+  color: #f49800;
+}
+.ba_kw {
+  color: #00b0ff;
+}
+.ba_pn {
+  color: undefined;
+}
+.ba_talpu {
+  color: #0098dc;
+}
+.ba_xa {
+  color: #ff0000;
+}
+.ba_xb {
+  color: #ff7d00;
+}
+.ba_xc {
+  color: #ffff00;
+}
+.ba_xd {
+  color: #00ff00;
+}
+.ba_xe {
+  color: #00ffff;
+}
+.ba_xf {
+  color: #0291ff;
+}
+.ba_xg {
+  color: #ff00ff;
+}
+.eb_key {
+  color: #00ffff;
+}
+.eb_danger {
+  color: #ff0000;
+}
+.ro_get {
+  color: #0098dc;
+}
+.ro_lose {
+  color: #c82a36;
+}
+.rolv_rem {
+  color: #ff4c22;
+}
+.lv_item {
+  color: #89e2ff;
+}
+.lv_rem {
+  color: #89e2ff;
+}
+.lv_fs {
+  color: #ff0000;
+}
+.lv_sp {
+  color: #fd4600;
+}
+.lv_ez {
+  color: #0098dc;
+}
+.ro1_get {
+  color: #e5b684;
+}
+.ro2_lose {
+  color: #ff6e6e;
+}
+.ro2_get {
+  color: #59dddc;
+}
+.ro2_virtue {
+  color: #0098dc;
+}
+.ro2_mutation {
+  color: #9266b2;
+}
+.ro2_desc {
+  color: #6d6d6d;
+}
+.rc_title {
+  color: #ffffff;
+}
+.rc_subtitle {
+  color: #ffc90e;
+}
+.rc_em {
+  color: #ff7f27;
+}
+.rc_eml {
+  color: #32cd32;
+}
+.ga_title {
+  color: #ffffff;
+}
+.ga_subtitle {
+  color: #ffc90e;
+}
+.ga_up {
+  color: #ff7f27;
+}
+.ga_adgacha {
+  color: #00c8ff;
+}
+.ga_nbgacha {
+  color: #00ddbb;
+}
+.ga_limadgacha {
+  color: #ff7e1f;
+}
+.ga_percent {
+  color: #ffd800;
+}
+.ga_attention {
+  color: #ff3126;
+}
+.attainga_desc {
+  color: #ff0000;
+}
+.attainga_desc2 {
+  color: #ffd800;
+}
+.attainga_attention {
+  color: #e1322c;
+}
+.linkagega_charname {
+  color: #fff6a9;
+}
+.linkagega_title {
+  color: #ff8a00;
+}
+.limtedga_title {
+  color: #89e2ff;
+}
+.limtedga_subtitle {
+  color: #ffc90e;
+}
+.limtedga_up {
+  color: #ff7f27;
+}
+.limtedga_21 {
+  color: #d7bcff;
+}
+.limtedga_percent {
+  color: #ffd800;
+}
+.limtedga_attention {
+  color: #e1322c;
+}
+.limtedga_lattention {
+  color: #ff9e58;
+}
+.vc_newyear10 {
+  color: #ff3823;
+}
+.vc_adgacha {
+  color: #0098dc;
+}
+.vc_attention {
+  color: #ffd800;
+}
+.act_missiontips {
+  color: #d9bd6a;
+}
+.lv_hdbg {
+  color: #7ba61f;
+}
+.tu_ht {
+  color: #ff8d00;
+}
+.lv_act20side {
+  color: #f7bc44;
+}
+.act_spreward {
+  color: #ff5001;
+}
+.act_timelimit {
+  color: #ffe300;
+}
+.vc_text {
+  color: #898989;
+}
+.vc_endtime {
+  color: #ff0327;
+}

@@ -7,10 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:30:46 
- * Last modified  : 2022-12-27 00:31:58
+ * Last modified  : 2022-12-27 09:00:04
  */
 
+import useMdui from "../../hooks/useMdui";
+
 function StageIcon(props) {
+  useMdui([]);
+  
   return (
     <i {...props} className={`${props.className} mdui-icon material-icons`}>
       &#xe0b6;

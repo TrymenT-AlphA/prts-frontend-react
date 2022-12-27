@@ -8,7 +8,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:21:01 
- * Last modified  : 2022-12-27 00:23:45
+ * Last modified  : 2022-12-28 00:53:43
  */
 
 function getFormatted(oldString, blackboard) {
@@ -29,7 +29,7 @@ function getFormatted(oldString, blackboard) {
   for (var eachMatch of allMatches) {
     var key = eachMatch[1].toLowerCase();
     var value = dict[key];
-    if (eachMatch[3] == "%") {
+    if (eachMatch[3] === "%") {
       newString = newString.replace(
         eachMatch[0],
         `${(100 * value).toFixed(Number(eachMatch[2]))}%`

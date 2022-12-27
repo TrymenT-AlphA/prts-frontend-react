@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:24:04 
- * Last modified  : 2022-12-27 00:24:34
+ * Last modified  : 2022-12-27 10:50:15
  */
 
 import EmptyIcon from "./empty-icon";
@@ -17,7 +17,8 @@ import EnemyIcon from "./enemy-icon";
 import ItemIcon from "./item-icon";
 import StageIcon from "./stage-icon";
 import DropIcon from "./drop-icon";
-import ArrowIcon from "./arrow-icon";
+import ArrowDownIcon from "./arrow-down-icon";
+import ArrowBackIcon from "./arrow-back-icon";
 import MenuIcon from "./menu-icon";
 
 export {
@@ -28,6 +29,7 @@ export {
   ItemIcon,
   StageIcon,
   DropIcon,
-  ArrowIcon,
+  ArrowDownIcon,
+  ArrowBackIcon,
   MenuIcon,
 };

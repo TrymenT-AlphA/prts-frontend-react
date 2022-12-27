@@ -2,27 +2,27 @@
  * Copyright ©2022-2023 Alice Remake, All Rights Reserved.
  *
  * a custom hook using GET method to request for data when
- * the component first rendered 
+ * the component first rendered
  *
  * @summary GET hook
  * @author Alice Remake
  *
- * Created at     : 2022-12-27 00:26:22 
- * Last modified  : 2022-12-27 00:29:55
+ * Created at     : 2022-12-27 00:26:22
+ * Last modified  : 2022-12-27 10:56:51
  */
 
-import * as React from "react";
+import { useState, useEffect } from "react";
 
 const useGet = (url) => {
-  const [data, setData] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw Error(`could not fetch data from ${url}`);
+          throw Error(`Could not get data from ${url}`);
         }
         return res.json();
       })

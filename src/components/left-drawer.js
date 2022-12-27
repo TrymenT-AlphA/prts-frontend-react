@@ -6,20 +6,24 @@
  * @summary left side drawer navigation
  * @author Alice Remake
  *
- * Created at     : 2022-12-27 00:24:47 
- * Last modified  : 2022-12-27 00:25:20
+ * Created at     : 2022-12-27 00:24:47
+ * Last modified  : 2022-12-27 19:50:08
  */
 
 import { useNavigate } from "react-router-dom";
 import * as Icons from "./icons";
-import useMdui from "../hooks/useMdui";
+import styles from "./left-drawer.module.css";
 
 function LeftDrawer() {
   const navigate = useNavigate();
-  useMdui();
 
   return (
     <div id="left-drawer" className="mdui-drawer">
+      <div className={styles.drawerLogo}>
+        <i>Arknights</i>
+        <br />
+        <i>Terminal</i>
+      </div>
       <ul className="mdui-list" mdui-collapse="{accordion: true}">
         {/* navigate to "/" */}
         <li
@@ -70,7 +74,7 @@ function LeftDrawer() {
           <div className="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <Icons.DropIcon className="mdui-list-item-icon" />
             <div className="mdui-list-item-content">掉落数据</div>
-            <Icons.ArrowIcon className="mdui-collapse-item-arrow" />
+            <Icons.ArrowDownIcon className="mdui-collapse-item-arrow" />
           </div>
           <ul className="mdui-collapse-item-body mdui-list">
             {/* navigate to "/drops/items" */}

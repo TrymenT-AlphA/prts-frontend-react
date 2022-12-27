@@ -7,10 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:30:46 
- * Last modified  : 2022-12-27 00:31:19
+ * Last modified  : 2022-12-27 10:48:57
  */
 
-function ArrowIcon(props) {
+import useMdui from "../../hooks/useMdui";
+
+function ArrowDownIcon(props) {
+  useMdui([]);
+  
   return (
     <i {...props} className={`${props.className} mdui-icon material-icons`}>
       &#xe313;
@@ -18,4 +22,4 @@ function ArrowIcon(props) {
   );
 }
 
-export default ArrowIcon;
+export default ArrowDownIcon;

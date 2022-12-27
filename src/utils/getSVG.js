@@ -9,10 +9,10 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:15:43 
- * Last modified  : 2022-12-27 00:17:02
+ * Last modified  : 2022-12-28 00:55:02
  */
 
-const getRange = (rangeId) => {
+function getRange(rangeId) {
   if (rangeId === "") {
     return null;
   }
@@ -30,7 +30,7 @@ const getRange = (rangeId) => {
       coordinates.push([2 + each.col * 26, 2 + each.row * 26]);
     }
   }
-  for (var [i, _] of coordinates.entries()) {
+  for (var [i, ] of coordinates.entries()) {
     coordinates[i][0] -= 26 * min_col;
     max_x = Math.max(max_x, coordinates[i][0]);
     coordinates[i][1] -= 26 * min_row;

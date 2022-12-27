@@ -10,12 +10,12 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:18:04 
- * Last modified  : 2022-12-27 00:20:30
+ * Last modified  : 2022-12-27 08:35:02
  */
 
 import htmr from "htmr";
 
-const getHtml = (oldString) => {
+function getHtml(oldString) {
   if (!oldString) {
     return "";
   }
