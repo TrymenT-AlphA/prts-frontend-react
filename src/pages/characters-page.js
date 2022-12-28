@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2022-12-27 19:58:00
+ * Last modified  : 2022-12-28 13:00:12
  */
 
 import { useState } from "react";
@@ -18,7 +18,6 @@ import Toolbar from "../components/toolbar";
 import DataTable from "../components/data-table";
 import Checkbtn from "../components/checkbtn";
 import CheckbtnGroup from "../components/checkbtn-group";
-import CharAvatar from "../components/char-avatar";
 import SearchBar from "../components/search-bar";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
@@ -112,7 +111,6 @@ function CharactersPageInner(props) {
     吟游者: true,
     工匠: true,
     护佑者: true,
-    冲锋手: true,
     傀儡师: true,
     处决者: true,
     怪杰: true,
@@ -123,54 +121,57 @@ function CharactersPageInner(props) {
   });
   const [search, setSearch] = useState(null);
   const tableHead = ["干员", "稀有度", "职业", "分支", "特性"];
-  const [tableData, setTableData] = useState(
-    data.map((char) => {
-      return [
-        {
-          value: char.name,
-          element: (
-            <div
-              className="mdui-valign mdui-ripple"
-              onClick={() => {
-                navigate(`/characters/${char.id}`);
-              }}
-            >
-              <CharAvatar id={char.id} />
-              <span className="mdui-m-l-1">{char.name}</span>
-            </div>
-          ),
-        },
-        {
-          value: `${char.rarity + 1}★`,
-          element: (
-            <span className="tag mdui-color-red-600">
-              {`${char.rarity + 1}★`}
-            </span>
-          ),
-        },
-        {
-          value: getProfession(char.profession),
-          element: (
-            <span className="tag mdui-color-pink-600">
-              {getProfession(char.profession)}
-            </span>
-          ),
-        },
-        {
-          value: getSubProfession(char.subProfessionId),
-          element: (
-            <span className=" tag mdui-color-purple-600">
-              {getSubProfession(char.subProfessionId)}
-            </span>
-          ),
-        },
-        {
-          value: char.description,
-          element: getHtml(char.description.replaceAll("\\n", "<br>")),
-        },
-      ];
-    })
-  );
+  const tableData = data.map((char) => {
+    return [
+      {
+        value: char.name,
+        element: (
+          <div
+            className="mdui-valign mdui-ripple"
+            onClick={() => {
+              navigate(`/characters/${char.id}`);
+            }}
+          >
+            <img
+              className="mdui-list-item-avatar mdui-m-a-0"
+              src={`/asset/avatar/${char.id}.png`}
+              alt={char.id}
+              style={{ width: "40px", height: "40px" }}
+            />
+            <span className="mdui-m-l-1">{char.name}</span>
+          </div>
+        ),
+      },
+      {
+        value: `${char.rarity + 1}★`,
+        element: (
+          <span className="tag mdui-color-red-600">
+            {`${char.rarity + 1}★`}
+          </span>
+        ),
+      },
+      {
+        value: getProfession(char.profession),
+        element: (
+          <span className="tag mdui-color-pink-600">
+            {getProfession(char.profession)}
+          </span>
+        ),
+      },
+      {
+        value: getSubProfession(char.subProfessionId),
+        element: (
+          <span className=" tag mdui-color-purple-600">
+            {getSubProfession(char.subProfessionId)}
+          </span>
+        ),
+      },
+      {
+        value: char.description,
+        element: getHtml(char.description.replaceAll("\\n", "<br>")),
+      },
+    ];
+  });
 
   return (
     <>
@@ -241,7 +242,7 @@ function CharactersPageInner(props) {
             }
             setSearch(content);
           }}
-          onCloseClick={() => {
+          onClick={() => {
             setSearch(null);
           }}
         />

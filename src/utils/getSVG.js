@@ -8,8 +8,8 @@
  * @summary turn range id to a nice SVG
  * @author Alice Remake
  *
- * Created at     : 2022-12-27 00:15:43 
- * Last modified  : 2022-12-28 00:55:02
+ * Created at     : 2022-12-27 00:15:43
+ * Last modified  : 2022-12-28 10:42:17
  */
 
 function getRange(rangeId) {
@@ -30,7 +30,7 @@ function getRange(rangeId) {
       coordinates.push([2 + each.col * 26, 2 + each.row * 26]);
     }
   }
-  for (var [i, ] of coordinates.entries()) {
+  for (var [i] of coordinates.entries()) {
     coordinates[i][0] -= 26 * min_col;
     max_x = Math.max(max_x, coordinates[i][0]);
     coordinates[i][1] -= 26 * min_row;
@@ -52,21 +52,21 @@ function getRange(rangeId) {
           id="2"
           fill="none"
           stroke="gray"
-          stroke-width="2"
+          strokeWidth="2"
           width="20"
           height="20"
         ></rect>
       </defs>
-      {coordinates.map((each) => {
+      {coordinates.map((each, key) => {
         if (each[0] === 1 - 26 * min_col && each[1] === 1 - 26 * min_row) {
-          return <use xlinkHref="#1" x={each[0]} y={each[1]}></use>;
+          return <use key={key} xlinkHref="#1" x={each[0]} y={each[1]}></use>;
         } else {
-          return <use xlinkHref="#2" x={each[0]} y={each[1]}></use>;
+          return <use key={key} xlinkHref="#2" x={each[0]} y={each[1]}></use>;
         }
       })}
     </svg>
   );
-};
+}
 
 const range = {
   "0-1": {

@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 19:16:51
- * Last modified  : 2022-12-27 19:42:49
+ * Last modified  : 2022-12-28 11:11:54
  */
 
 function SearchBar(props) {
@@ -32,7 +32,7 @@ function SearchBar(props) {
       />
       <button
         className="mdui-textfield-close mdui-btn mdui-btn-icon"
-        onClick={props.onCloseClick}
+        onClick={props.onClick}
       >
         <i className="mdui-icon material-icons">close</i>
       </button>

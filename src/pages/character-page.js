@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:44:41
- * Last modified  : 2022-12-28 00:53:54
+ * Last modified  : 2022-12-28 14:00:29
  */
 
 import { useParams } from "react-router-dom";
@@ -15,6 +15,7 @@ import { useParams } from "react-router-dom";
 import ErrorPage from "./error-page";
 import LoadingPage from "./loading-page";
 import Toolbar from "../components/toolbar";
+import ItemCost from "../components/item-cost";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
 import getProfession from "../utils/getProfession";
@@ -40,14 +41,13 @@ function CharacterPage() {
 function CharacterPageInner(props) {
   const data = props.data;
   const potentialList = JSON.parse(data.potentialList);
-  console.log(data);
-  console.log(potentialList);
 
   return (
     <>
       <Toolbar currentPage={data.name} />
       <div className="mdui-container">
         <div className="mdui-card mdui-m-t-4">
+          {/* card header */}
           <div className="mdui-card-header">
             <img
               src={`/asset/avatar/${data.id}.png`}
@@ -59,15 +59,13 @@ function CharacterPageInner(props) {
               {getSubProfession(data.subProfessionId)}
             </div>
           </div>
-          <div
-            className="mdui-card-primary"
-            style={{
-              marginTop: "-24px",
-            }}
-          >
+
+          {/* card body */}
+          <div className="mdui-card-primary" style={{ marginTop: "-24px" }}>
             <div className="mdui-typo">
               <hr />
             </div>
+            {/* tabs */}
             <div className="mdui-tab" mdui-tab={1}>
               <a href="#char-tab1" className="mdui-tab-active mdui-ripple">
                 基本信息
@@ -82,6 +80,8 @@ function CharacterPageInner(props) {
                 培养素材
               </a>
             </div>
+
+            {/* tab 1 基本信息 */}
             <div id="char-tab1" className="mdui-p-a-2">
               <div className="mdui-typo">
                 <h4>描述</h4>
@@ -163,7 +163,7 @@ function CharacterPageInner(props) {
                           }
 
                           return (
-                            <th className="mdui-text-center">
+                            <th key={key} className="mdui-text-center">
                               <span className="tag mdui-color-indigo">
                                 {`精英${inst.phase + 1}`}
                               </span>
@@ -183,7 +183,7 @@ function CharacterPageInner(props) {
                           }
 
                           return (
-                            <td className="mdui-text-center">
+                            <td key={key} className="mdui-text-center">
                               {getSVG(inst.rangeId)}
                             </td>
                           );
@@ -194,6 +194,8 @@ function CharacterPageInner(props) {
                 </div>
               </div>
             </div>
+
+            {/* tab2 天赋 & 潜能 */}
             <div id="char-tab2" className="mdui-p-a-2">
               <div className="mdui-typo">
                 <h4>天赋提升</h4>
@@ -202,8 +204,8 @@ function CharacterPageInner(props) {
                     <tbody>
                       {data.talents.map((talent, key) => {
                         return (
-                          <tr>
-                            <th key={key}>
+                          <tr key={key}>
+                            <th>
                               <span className="tag mdui-color-teal">
                                 {`天赋${talent.prefabKey}`}
                               </span>
@@ -254,6 +256,8 @@ function CharacterPageInner(props) {
                 </div>
               </div>
             </div>
+
+            {/* tab3 基建技能 & 技能 */}
             <div id="char-tab3" className="mdui-p-a-2">
               <div className="mdui-typo">
                 <h4>基建技能</h4>
@@ -322,12 +326,13 @@ function CharacterPageInner(props) {
                     const skill = c_s.skill;
                     return (
                       <div
+                        key={key}
                         className={[
                           "mdui-table-fluid mdui-shadow-0",
                           key ? "mdui-m-t-4" : "",
                         ].join(" ")}
                       >
-                        <table key={key} className="mdui-table">
+                        <table className="mdui-table">
                           <thead>
                             <tr>
                               <td rowSpan={2}>
@@ -367,9 +372,8 @@ function CharacterPageInner(props) {
                                   <span className="tag mdui-color-yellow">
                                     受击回复
                                   </span>
-                                ) : skill.skillInstances[0].spType === 8 ? (
-                                  8
-                                ) : null}
+                                ) : skill.skillInstances[0].spType ===
+                                  8 ? null : null}
                                 <span className="tag mdui-color-grey">
                                   {skill.skillInstances[0].type === 0
                                     ? "被动"
@@ -385,7 +389,7 @@ function CharacterPageInner(props) {
                           <tbody>
                             {skill.skillInstances.map((inst, key) => {
                               return (
-                                <tr>
+                                <tr key={key}>
                                   <td>
                                     {key + 1 <= 7 ? (
                                       <span className="tag mdui-color-indigo">
@@ -403,11 +407,11 @@ function CharacterPageInner(props) {
                                     )}
                                   </td>
                                   <td>
-                                    <span className="tag mdui-color-grey-600">{`初始：${inst.initSp}`}</span>
+                                    <span className="tag mdui-color-grey-600">{`▶  初始：${inst.initSp}`}</span>
                                     <br />
-                                    <span className="tag mdui-color-lime">{`消耗：${inst.spCost}`}</span>
+                                    <span className="tag mdui-color-lime">{`⚡ 消耗：${inst.spCost}`}</span>
                                     <br />
-                                    <span className="tag mdui-color-grey-500">{`持续：${inst.duration}`}</span>
+                                    <span className="tag mdui-color-grey-500">{`⏲ 持续：${inst.duration}`}</span>
                                   </td>
                                 </tr>
                               );
@@ -419,19 +423,147 @@ function CharacterPageInner(props) {
                   })}
               </div>
             </div>
+
+            {/* 培养素材 */}
             <div id="char-tab4" className="mdui-p-a-2">
               <div className="mdui-typo">
                 <h4>进阶素材</h4>
                 <div className="mdui-table-fluid mdui-shadow-0">
-                  <table className="mdui-table"></table>
+                  <table className="mdui-table">
+                    <tbody>
+                      {data.characterInstances.map((inst, key) => {
+                        if (inst.level !== 1) {
+                          return null;
+                        }
+                        if (inst.evolveCost === "") {
+                          return null;
+                        }
+
+                        const evolveCost = JSON.parse(inst.evolveCost);
+                        return (
+                          <tr key={key}>
+                            <td>
+                              <span className="tag mdui-color-indigo">
+                                {`精英化${inst.phase}`}
+                              </span>
+                            </td>
+                            {evolveCost.map((each, key) => {
+                              return (
+                                <td key={key}>
+                                  <ItemCost
+                                    id={each.id}
+                                    count={each.count}
+                                    style={{ width: "40px", height: "40px" }}
+                                  />
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
                 </div>
                 <h4>技能升级素材</h4>
                 <div className="mdui-table-fluid mdui-shadow-0">
-                  <table className="mdui-table"></table>
+                  <table className="mdui-table">
+                    <tbody>
+                      {JSON.parse(data.allSkillLvlupList).map(
+                        (costCond, key) => {
+                          return (
+                            <tr key={key}>
+                              <th>
+                                <span className="tag mdui-color-indigo">
+                                  {`等级${key + 1} » 等级${key + 2}`}
+                                </span>
+                              </th>
+                              {costCond.lvlUpCost.map((each, key) => {
+                                return (
+                                  <td key={key}>
+                                    <ItemCost
+                                      id={each.id}
+                                      count={each.count}
+                                      style={{
+                                        width: "40px",
+                                        height: "40px",
+                                      }}
+                                    />
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        }
+                      )}
+                    </tbody>
+                  </table>
                 </div>
                 <h4>技能专精素材</h4>
                 <div className="mdui-table-fluid mdui-shadow-0">
-                  <table className="mdui-table"></table>
+                  <table className="mdui-table">
+                    <tbody>
+                      {data.skills
+                        .sort((c_s1, c_s2) => {
+                          var lastChar1 = c_s1.skill.id.charAt(
+                            c_s1.skill.id.length - 1
+                          );
+                          var lastChar2 = c_s2.skill.id.charAt(
+                            c_s2.skill.id.length - 1
+                          );
+                          if (lastChar1 === "1") {
+                            return -1;
+                          } else if (lastChar2 === "1") {
+                            return 1;
+                          } else if (lastChar1 === "2" && lastChar2 === "3") {
+                            return -1;
+                          } else if (lastChar1 === "3" && lastChar2 === "2") {
+                            return 1;
+                          } else if (lastChar1 !== "2" && lastChar1 !== "3") {
+                            return -1;
+                          } else if (lastChar2 !== "2" && lastChar2 !== "3") {
+                            return 1;
+                          } else {
+                            return c_s1.skill.id < c_s2.skill.id ? -1 : 1;
+                          }
+                        })
+                        .map((c_s, skillIndex) => {
+                          const lvlupCostCond = JSON.parse(c_s.lvlupCostCond);
+
+                          return lvlupCostCond.map((costCond, lvlupIndex) => {
+                            return (
+                              <tr key={`${skillIndex} ${lvlupIndex}`}>
+                                {lvlupIndex === 0 ? (
+                                  <th rowSpan={3}>
+                                    <span className="tag mdui-color-deep-orange">
+                                      {`技能${skillIndex + 1}`}
+                                    </span>
+                                  </th>
+                                ) : null}
+                                <th>
+                                  <span className="tag mdui-color-red">
+                                    {`专精${"I".repeat(lvlupIndex + 1)}`}
+                                  </span>
+                                </th>
+                                {costCond.levelUpCost.map((each, key) => {
+                                  return (
+                                    <td key={key}>
+                                      <ItemCost
+                                        id={each.id}
+                                        count={each.count}
+                                        style={{
+                                          width: "40px",
+                                          height: "40px",
+                                        }}
+                                      />
+                                    </td>
+                                  );
+                                })}
+                              </tr>
+                            );
+                          });
+                        })}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
