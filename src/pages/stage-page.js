@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:48:43
- * Last modified  : 2022-12-29 00:46:03
+ * Last modified  : 2022-12-29 02:11:44
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -69,7 +69,7 @@ function StageInnerPage(props) {
                     border: "solid 1px",
                   }}
                 >
-                  该物品暂无掉落数据
+                  该关卡暂无掉落数据
                 </button>
               ) : (
                 <button

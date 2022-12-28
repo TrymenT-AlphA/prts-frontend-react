@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:24:47
- * Last modified  : 2022-12-28 23:11:33
+ * Last modified  : 2022-12-29 01:25:20
  */
 
 import { useNavigate } from "react-router-dom";
@@ -120,6 +120,24 @@ function LeftDrawer() {
             >
               <div className="mdui-list-item-content">按关卡</div>
               <Icons.StageIcon className="mdui-list-item-icon" />
+            </li>
+          </ul>
+        </li>
+
+        <li className="mdui-collapse-item mdui-collapse-item-open">
+          <div className="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <Icons.ExtensionIcon className="mdui-list-item-icon" />
+            <div className="mdui-list-item-content">实用工具</div>
+            <Icons.ArrowDownIcon className="mdui-collapse-item-arrow" />
+          </div>
+          <ul className="mdui-collapse-item-body mdui-list">
+            {/* navigate to "/drops/items" */}
+            <li
+              className="mdui-list-item mdui-ripple"
+              onClick={() => navigate("/recruit")}
+            >
+              <div className="mdui-list-item-content">公开招募计算器</div>
+              <Icons.RecruitIcon className="mdui-list-item-icon" />
             </li>
           </ul>
         </li>
