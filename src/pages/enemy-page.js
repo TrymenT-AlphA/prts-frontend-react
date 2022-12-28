@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:46:05
- * Last modified  : 2022-12-28 20:42:53
+ * Last modified  : 2022-12-29 00:27:14
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -79,7 +79,7 @@ function EnemyInnerPage(props) {
                 <table className="mdui-table">
                   <thead>
                     <tr>
-                      <th>等级</th>
+                      <th>级别</th>
                       <th>种族</th>
                       <th>攻击方式</th>
                       <th>耐久</th>
@@ -167,7 +167,7 @@ function EnemyInnerPage(props) {
                           <tr>
                             <td>{inst.baseAttackTime}</td>
                             <td>{inst.attackSpeed}</td>
-                            <td>{inst.HpRecoveryPerSec}</td>
+                            <td>{inst.hpRecoveryPerSec}</td>
                             <td>{inst.massLevel}</td>
                             <td>{inst.lifePointReduce}</td>
                           </tr>
@@ -227,28 +227,28 @@ function EnemyInnerPage(props) {
                         </tbody>
                       </table>
                     </div>
-                    <h5>出场关卡</h5>
-                    <div>
-                      {inst.stages.map((e_s, key) => {
-                        const stage = e_s.stage;
-                        if (
-                          !stage.name ||
-                          !stage.code ||
-                          stage.difficulty === "FOUR_STAR"
-                        ) {
-                          return null;
-                        }
+                    <div className="mdui-panel" mdui-panel={1}>
+                      <div className="mdui-panel-item mdui-shadow-1 mdui-ripple">
+                        <div className="mdui-panel-item-header">出场关卡</div>
+                        <div className="mdui-panel-item-body">
+                          {inst.stages.map((e_s, key) => {
+                            const stage = e_s.stage;
+                            if (!stage.name || !stage.code) {
+                              return null;
+                            }
 
-                        return (
-                          <div
-                            key={key}
-                            className="mdui-chip"
-                            onClick={() => navigate(`/stages/${stage.id}`)}
-                          >
-                            <span className="mdui-chip-title">{`${stage.code} ${stage.name}`}</span>
-                          </div>
-                        );
-                      })}
+                            return (
+                              <div
+                                key={key}
+                                className="mdui-chip"
+                                onClick={() => navigate(`/stages/${stage.id}`)}
+                              >
+                                <span className="mdui-chip-title">{`${stage.code} ${stage.name}`}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );

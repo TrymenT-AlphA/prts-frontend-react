@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:33:10
- * Last modified  : 2022-12-28 20:48:33
+ * Last modified  : 2022-12-28 22:56:22
  */
 
 import * as RRD from "react-router-dom";
@@ -20,7 +20,9 @@ import EnemiesPage from "./pages/enemies-page";
 import EnemyPage from "./pages/enemy-page";
 import ItemsPage from "./pages/items-page";
 import ItemPage from "./pages/item-page";
-import StagesPage from "./pages/stages-page";
+import StagesMainPage from "./pages/stages-main-page";
+import StagesPermPage from "./pages/stages-perm-page";
+import StagesActiPage from "./pages/stages-acti-page";
 import StagePage from "./pages/stage-page";
 import DropsItemsPage from "./pages/drops-items-page";
 import DropsItemPage from "./pages/drops-item-page";
@@ -41,7 +43,9 @@ function App() {
         <RRD.Route path="/enemies/:id" element={<EnemyPage />} />
         <RRD.Route path="/items" element={<ItemsPage />} />
         <RRD.Route path="/items/:id" element={<ItemPage />} />
-        <RRD.Route path="/stages" element={<StagesPage />} />
+        <RRD.Route path="/stages/main" element={<StagesMainPage />} />
+        <RRD.Route path="/stages/perm" element={<StagesPermPage />} />
+        <RRD.Route path="/stages/acti" element={<StagesActiPage />} />
         <RRD.Route path="/stages/:id" element={<StagePage />} />
         <RRD.Route path="/drops/items" element={<DropsItemsPage />} />
         <RRD.Route path="/drops/stages" element={<DropsStagesPage />} />

@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:24:47
- * Last modified  : 2022-12-28 20:49:26
+ * Last modified  : 2022-12-28 23:11:33
  */
 
 import { useNavigate } from "react-router-dom";
@@ -61,13 +61,40 @@ function LeftDrawer() {
           <div className="mdui-list-item-content">道具总览</div>
         </li>
 
-        {/* navigate to "/stages" */}
-        <li
-          className="mdui-list-item mdui-ripple"
-          onClick={() => navigate("/stages")}
-        >
-          <Icons.StageIcon className="mdui-list-item-icon" />
-          <div className="mdui-list-item-content">关卡总览</div>
+        <li className="mdui-collapse-item mdui-collapse-item-open">
+          <div className="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <Icons.StageIcon className="mdui-list-item-icon" />
+            <div className="mdui-list-item-content">关卡总览</div>
+            <Icons.ArrowDownIcon className="mdui-collapse-item-arrow" />
+          </div>
+          <ul className="mdui-collapse-item-body mdui-list">
+            {/* navigate to "/stages/main" */}
+            <li
+              className="mdui-list-item mdui-ripple"
+              onClick={() => navigate("/stages/main")}
+            >
+              <div className="mdui-list-item-content">主线关卡</div>
+              <Icons.StageMainIcon className="mdui-list-item-icon" />
+            </li>
+
+            {/* navigate to "/stages/perm" */}
+            <li
+              className="mdui-list-item mdui-ripple"
+              onClick={() => navigate("/stages/perm")}
+            >
+              <div className="mdui-list-item-content">常驻关卡</div>
+              <Icons.StagePermIcon className="mdui-list-item-icon" />
+            </li>
+
+            {/* navigate to "/stages/acti" */}
+            <li
+              className="mdui-list-item mdui-ripple"
+              onClick={() => navigate("/stages/acti")}
+            >
+              <div className="mdui-list-item-content">活动关卡</div>
+              <Icons.StageActiIcon className="mdui-list-item-icon" />
+            </li>
+          </ul>
         </li>
 
         <li className="mdui-collapse-item mdui-collapse-item-open">

@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:45:25
- * Last modified  : 2022-12-28 17:25:26
+ * Last modified  : 2022-12-29 00:09:40
  */
 
 import { useState } from "react";
@@ -92,7 +92,7 @@ function EnemiesInnerPage(props) {
   const tableHead = [
     "#",
     "种族",
-    "等级",
+    "级别",
     "耐久",
     "攻击",
     "防御",
@@ -177,7 +177,7 @@ function EnemiesInnerPage(props) {
           {/* first check group */}
           <div className="mdui-col-lg-6 mdui-col-md-6">
             <CheckbtnGroup
-              title={`敌人等级`}
+              title={`敌人级别`}
               titleClass={`mdui-text-color-red-800`}
               groupState={levelFilter}
               setGroupState={setLevelFilter}
@@ -295,7 +295,7 @@ function EnemiesInnerPage(props) {
         {/* search */}
         <SearchBar
           className="mdui-m-t-4"
-          placeholder="搜索敌人名称/等级/四项属性"
+          placeholder="搜索敌人名称/级别/四项属性"
           onChange={(e) => {
             var content = e.target.value;
             if (content === "") {

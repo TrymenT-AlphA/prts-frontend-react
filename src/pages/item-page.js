@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:54
- * Last modified  : 2022-12-28 19:38:51
+ * Last modified  : 2022-12-29 00:30:54
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -80,23 +80,29 @@ function ItemPageInner(props) {
                 </button>
               )}
 
-              <h4>掉落关卡</h4>
-              <div>
-                {data.drops.map((drop, key) => {
-                  if (!drop.stage.name || !drop.stage.code) {
-                    return null;
-                  }
+              <div className="mdui-panel mdui-m-t-4" mdui-panel={1}>
+                <div className="mdui-panel-item mdui-shadow-1 mdui-ripple">
+                  <div className="mdui-panel-item-header">掉落关卡</div>
+                  <div className="mdui-panel-item-body">
+                    {data.drops.map((drop, key) => {
+                      if (!drop.stage.name || !drop.stage.code) {
+                        return null;
+                      }
 
-                  return (
-                    <div
-                      key={key}
-                      className="mdui-chip"
-                      onClick={() => navigate(`/drops/stages/${drop.stage.id}`)}
-                    >
-                      <span className="mdui-chip-title">{`${drop.stage.code} ${drop.stage.name}`}</span>
-                    </div>
-                  );
-                })}
+                      return (
+                        <div
+                          key={key}
+                          className="mdui-chip"
+                          onClick={() =>
+                            navigate(`/stages/${drop.stage.id}`)
+                          }
+                        >
+                          <span className="mdui-chip-title">{`${drop.stage.code} ${drop.stage.name}`}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
