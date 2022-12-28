@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:33:10
- * Last modified  : 2022-12-27 00:57:19
+ * Last modified  : 2022-12-28 20:48:33
  */
 
 import * as RRD from "react-router-dom";
@@ -28,7 +28,7 @@ import DropsStagesPage from "./pages/drops-stages-page";
 import DropsStagePage from "./pages/drops-stage-page";
 
 function App() {
-  useMdui();
+  useMdui([]);
 
   return (
     <>

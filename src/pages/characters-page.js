@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2022-12-28 14:20:22
+ * Last modified  : 2022-12-28 20:06:10
  */
 
 import { useState } from "react";
@@ -121,7 +121,7 @@ function CharactersPageInner(props) {
     陷阱师: true,
   });
   const [search, setSearch] = useState(null);
-  const tableHead = ["干员", "稀有度", "职业", "分支", "特性"];
+  const tableHead = ["#", "稀有度", "职业", "分支", "特性"];
   const tableData = data.map((char) => {
     return [
       {
@@ -176,7 +176,7 @@ function CharactersPageInner(props) {
 
   return (
     <>
-      <Toolbar currentPage={`干员总览`} />
+      <Toolbar currentPage={`干员总览`}/>
       <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         {/* first check group */}
         <CheckbtnGroup

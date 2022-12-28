@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 10:09:41
- * Last modified  : 2022-12-27 10:55:43
+ * Last modified  : 2022-12-28 19:56:33
  */
 
 import { useEffect } from "react";
@@ -24,7 +24,7 @@ function ErrorPage(props) {
     if (redirectTime === 0) {
       navigate("/");
     }
-  }, [redirectTime]);
+  }, [redirectTime, navigate]);
 
   return (
     <>

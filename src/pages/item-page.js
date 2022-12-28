@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:54
- * Last modified  : 2022-12-28 16:23:40
+ * Last modified  : 2022-12-28 19:38:51
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -37,7 +37,6 @@ function ItemPage() {
 function ItemPageInner(props) {
   const data = props.data;
   const navigate = useNavigate();
-  console.log(data);
 
   return (
     <>
@@ -55,6 +54,7 @@ function ItemPageInner(props) {
 
           <div className="mdui-card-primary" style={{ marginTop: "-24px" }}>
             <div className="mdui-typo">
+              <hr />
               <h4>基本描述</h4>
               <p>{data.description}</p>
               <h4>用途</h4>
@@ -62,7 +62,7 @@ function ItemPageInner(props) {
               <h4>掉落数据分析</h4>
               {data.drops.length === 0 ? (
                 <button
-                  class="mdui-btn mdui-btn-block mdui-ripple mdui-color-indigo"
+                  className="mdui-btn mdui-btn-block mdui-ripple mdui-color-indigo"
                   disabled
                   onClick={() => navigate(`/drops/items/${data.id}`)}
                   style={{
@@ -73,7 +73,7 @@ function ItemPageInner(props) {
                 </button>
               ) : (
                 <button
-                  class="mdui-btn mdui-btn-block mdui-ripple mdui-color-indigo"
+                  className="mdui-btn mdui-btn-block mdui-ripple mdui-color-indigo"
                   onClick={() => navigate(`/drops/items/${data.id}`)}
                 >
                   前往掉落数据分析
@@ -83,17 +83,17 @@ function ItemPageInner(props) {
               <h4>掉落关卡</h4>
               <div>
                 {data.drops.map((drop, key) => {
-                  if (!drop.stage.code || !drop.stage.code) {
+                  if (!drop.stage.name || !drop.stage.code) {
                     return null;
                   }
 
                   return (
                     <div
                       key={key}
-                      class="mdui-chip"
+                      className="mdui-chip"
                       onClick={() => navigate(`/drops/stages/${drop.stage.id}`)}
                     >
-                      <span class="mdui-chip-title">{`${drop.stage.code} ${drop.stage.name}`}</span>
+                      <span className="mdui-chip-title">{`${drop.stage.code} ${drop.stage.name}`}</span>
                     </div>
                   );
                 })}
