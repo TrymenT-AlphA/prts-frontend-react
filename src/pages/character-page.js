@@ -7,11 +7,10 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:44:41
- * Last modified  : 2022-12-28 14:00:29
+ * Last modified  : 2022-12-28 14:04:41
  */
 
 import { useParams } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 import ErrorPage from "./error-page";
 import LoadingPage from "./loading-page";
 import Toolbar from "../components/toolbar";

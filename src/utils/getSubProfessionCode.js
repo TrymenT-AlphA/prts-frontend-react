@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 16:55:15
- * Last modified  : 2022-12-27 17:05:48
+ * Last modified  : 2022-12-28 14:21:10
  */
 
 function getSubProfessionCode(subProfession) {
@@ -58,7 +58,7 @@ function getSubProfessionCode(subProfession) {
     吟游者: "bard",
     工匠: "craftsman",
     护佑者: "blessing",
-    冲锋手: "stalker",
+    伏击客: "stalker",
     傀儡师: "dollkeeper",
     处决者: "executor",
     怪杰: "geek",

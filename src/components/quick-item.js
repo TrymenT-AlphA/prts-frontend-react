@@ -7,25 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-28 11:24:42
- * Last modified  : 2022-12-28 16:24:56
+ * Last modified  : 2022-12-28 16:25:41
  */
 
 import { useState } from "react";
-import useGet from "../hooks/useGet";
-import getServer from "../utils/getServer";
 
-function Item(props) {
-  const { id } = props;
+function QuickItem(props) {
+  const { data } = props;
   const [isError, setIsError] = useState(false);
-  const { data, isLoading, error } = useGet(`${getServer()}/items/${id}`);
-
-  if (error !== null) {
-    return <span>{error}</span>;
-  }
-
-  if (isLoading) {
-    return <div className="mdui-spinner" style={props.style}></div>;
-  }
 
   return (
     <img
@@ -41,4 +30,4 @@ function Item(props) {
   );
 }
 
-export default Item;
+export default QuickItem;

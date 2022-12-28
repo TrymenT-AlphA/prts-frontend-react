@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2022-12-28 13:00:12
+ * Last modified  : 2022-12-28 14:20:22
  */
 
 import { useState } from "react";
@@ -111,6 +111,7 @@ function CharactersPageInner(props) {
     吟游者: true,
     工匠: true,
     护佑者: true,
+    伏击客: true,
     傀儡师: true,
     处决者: true,
     怪杰: true,
