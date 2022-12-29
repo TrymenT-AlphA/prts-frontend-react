@@ -7,14 +7,12 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:25:39 
- * Last modified  : 2022-12-27 19:50:14
+ * Last modified  : 2022-12-29 22:06:59
  */
 
-import { useNavigate } from "react-router-dom";
 import { MenuIcon } from "./icons";
 
 function Toolbar(props) {
-  const navigate = useNavigate();
 
   return (
     <div className="mdui-appbar">
@@ -27,10 +25,10 @@ function Toolbar(props) {
           <MenuIcon />
         </button>
 
-        {/* title content navigate to home */}
+        {/* title content navigate to home
         <span className="mdui-typo-headline" onClick={() => navigate("/")}>
           PRTS
-        </span>
+        </span> */}
 
         {/* show where are we now */}
         <span className="mdui-typo-headline">{props.currentPage}</span>
