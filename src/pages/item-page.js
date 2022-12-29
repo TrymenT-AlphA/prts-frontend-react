@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:54
- * Last modified  : 2022-12-29 00:30:54
+ * Last modified  : 2022-12-29 13:44:16
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -41,8 +41,8 @@ function ItemPageInner(props) {
   return (
     <>
       <Toolbar currentPage={data.name} />
-      <div className="mdui-container">
-        <div className="mdui-card mdui-m-t-4">
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
+        <div className="mdui-card">
           {/* card header */}
           <div className="mdui-card-header">
             <Item id={data.id} className="mdui-card-header-avatar" />

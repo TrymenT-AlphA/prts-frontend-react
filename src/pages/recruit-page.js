@@ -7,20 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:50:43
- * Last modified  : 2022-12-29 03:16:40
+ * Last modified  : 2022-12-29 18:52:37
  */
 
-import { useParams } from "react-router-dom";
 import ErrorPage from "./error-page";
 import LoadingPage from "./loading-page";
 import Toolbar from "../components/toolbar";
-import ItemCost from "../components/item-cost";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
-import getProfession from "../utils/getProfession";
-import getSubProfession from "../utils/getSubProfession";
-import getHtml from "../utils/getHtml";
-import getSVG from "../utils/getSVG";
 
 function RecruitPage() {
   const { data, isLoading, error } = useGet(`${getServer()}/drops/items`);
@@ -42,6 +36,7 @@ function RecruitInnerPage(props) {
   return (
     <>
       <Toolbar currentPage="公开招募计算器" />
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5"></div>
     </>
   );
 }

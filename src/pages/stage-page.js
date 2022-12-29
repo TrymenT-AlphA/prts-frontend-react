@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:48:43
- * Last modified  : 2022-12-29 02:11:44
+ * Last modified  : 2022-12-29 18:53:24
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -42,8 +42,8 @@ function StageInnerPage(props) {
   return (
     <>
       <Toolbar currentPage={data.name} />
-      <div className="mdui-container">
-        <div className="mdui-card mdui-m-t-4">
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
+        <div className="mdui-card">
           <div className="mdui-card-primary">
             <div className="mdui-card-primary-title">{data.name}</div>
             <div className="mdui-card-primary-subtitle">{data.code}</div>
@@ -141,6 +141,7 @@ function StageInnerPage(props) {
                           id={"AP_GAMEPLAY"}
                           count={data.apCost}
                           style={{ width: "40px", height: "40px" }}
+                          onClick={() => navigate(`/items/${"AP_GAMEPLAY"}`)}
                         />
                       </td>
                       <td>
@@ -149,6 +150,7 @@ function StageInnerPage(props) {
                             id={"6001"}
                             count={data.practiceTicketCost}
                             style={{ width: "40px", height: "40px" }}
+                            onClick={() => navigate(`/items/${"6001"}`)}
                           />
                         ) : (
                           <span className="tag mdui-color-red">无法演习</span>
@@ -176,6 +178,9 @@ function StageInnerPage(props) {
                               id={"AP_GAMEPLAY"}
                               count={data.hard.apCost}
                               style={{ width: "40px", height: "40px" }}
+                              onClick={() =>
+                                navigate(`/items/${"AP_GAMEPLAY"}`)
+                              }
                             />
                           </td>
                           <td>
@@ -184,6 +189,7 @@ function StageInnerPage(props) {
                                 id={"6001"}
                                 count={data.hard.practiceTicketCost}
                                 style={{ width: "40px", height: "40px" }}
+                                onClick={() => navigate(`/items/${"6001"}`)}
                               />
                             ) : (
                               <span className="tag mdui-color-red">

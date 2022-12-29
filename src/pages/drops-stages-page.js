@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:52:36
- * Last modified  : 2022-12-29 09:32:28
+ * Last modified  : 2022-12-29 13:43:33
  */
 
 import { useState } from "react";
@@ -42,7 +42,7 @@ function DropsStagesInnerPage(props) {
     <>
       <Toolbar currentPage="掉落数据（按关卡）" />
 
-      <div className="mdui-container">
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         {/* search */}
         <SearchBar
           className="mdui-m-t-4 mdui-textfield-expanded"

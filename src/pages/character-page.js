@@ -7,10 +7,10 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:44:41
- * Last modified  : 2022-12-28 17:10:43
+ * Last modified  : 2022-12-29 18:55:01
  */
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ErrorPage from "./error-page";
 import LoadingPage from "./loading-page";
 import Toolbar from "../components/toolbar";
@@ -39,13 +39,14 @@ function CharacterPage() {
 
 function CharacterPageInner(props) {
   const data = props.data;
+  const navigate = useNavigate();
   const potentialList = JSON.parse(data.potentialList);
 
   return (
     <>
       <Toolbar currentPage={data.name} />
-      <div className="mdui-container">
-        <div className="mdui-card mdui-m-t-4">
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
+        <div className="mdui-card">
           {/* card header */}
           <div className="mdui-card-header">
             <img
@@ -457,6 +458,9 @@ function CharacterPageInner(props) {
                                       id={each.id}
                                       count={each.count}
                                       style={{ width: "40px", height: "40px" }}
+                                      onClick={() =>
+                                        navigate(`/items/${each.id}`)
+                                      }
                                     />
                                   </td>
                                 );
@@ -490,6 +494,9 @@ function CharacterPageInner(props) {
                                           width: "40px",
                                           height: "40px",
                                         }}
+                                        onClick={() =>
+                                          navigate(`/items/${each.id}`)
+                                        }
                                       />
                                     </td>
                                   );
@@ -557,6 +564,9 @@ function CharacterPageInner(props) {
                                             width: "40px",
                                             height: "40px",
                                           }}
+                                          onClick={() =>
+                                            navigate(`/items/${each.id}`)
+                                          }
                                         />
                                       </td>
                                     );

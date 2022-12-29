@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:46:05
- * Last modified  : 2022-12-29 00:27:14
+ * Last modified  : 2022-12-29 13:43:51
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -40,8 +40,8 @@ function EnemyInnerPage(props) {
   return (
     <>
       <Toolbar currentPage={data.name} />
-      <div className="mdui-container">
-        <div className="mdui-card mdui-m-t-4">
+      <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
+        <div className="mdui-card">
           {/* card header */}
           <div className="mdui-card-header">
             <img

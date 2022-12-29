@@ -7,16 +7,14 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-28 11:24:42
- * Last modified  : 2022-12-28 14:01:27
+ * Last modified  : 2022-12-29 18:59:32
  */
 
-import { useNavigate } from "react-router-dom";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
 
 function ItemCost(props) {
   const { id } = props;
-  const navigate = useNavigate();
   const { data, isLoading, error } = useGet(`${getServer()}/items/${id}`);
 
   if (error !== null) {
@@ -32,7 +30,7 @@ function ItemCost(props) {
       style={{
         display: "inline-block",
       }}
-      onClick={() => navigate(`/items/${id}`)}
+      onClick={() => props.onClick()}
     >
       <div className="mdui-valign">
         <img
