@@ -1,15 +1,49 @@
 /**
  * Copyright ©2022-2023 Alice Remake, All Rights Reserved.
  *
- * long description for the file
+ * all items with drop information
  *
- * @summary short description for the file
+ * @summary drops items page
  * @author Alice Remake
  *
- * Created at     : 2022-12-29 01:15:15
- * Last modified  : 2022-12-29 01:15:30
+ * Created at     : 2022-12-27 00:50:43
+ * Last modified  : 2022-12-29 03:16:40
  */
 
-function RecruitPage() {}
+import { useParams } from "react-router-dom";
+import ErrorPage from "./error-page";
+import LoadingPage from "./loading-page";
+import Toolbar from "../components/toolbar";
+import ItemCost from "../components/item-cost";
+import useGet from "../hooks/useGet";
+import getServer from "../utils/getServer";
+import getProfession from "../utils/getProfession";
+import getSubProfession from "../utils/getSubProfession";
+import getHtml from "../utils/getHtml";
+import getSVG from "../utils/getSVG";
+
+function RecruitPage() {
+  const { data, isLoading, error } = useGet(`${getServer()}/drops/items`);
+
+  if (error !== null) {
+    return <ErrorPage error={error} />;
+  }
+
+  if (isLoading) {
+    return <LoadingPage />;
+  }
+
+  return <RecruitInnerPage data={data} />;
+}
+
+function RecruitInnerPage(props) {
+  const data = props.data;
+
+  return (
+    <>
+      <Toolbar currentPage="公开招募计算器" />
+    </>
+  );
+}
 
 export default RecruitPage;

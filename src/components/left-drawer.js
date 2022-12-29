@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:24:47
- * Last modified  : 2022-12-29 01:25:20
+ * Last modified  : 2022-12-29 03:13:59
  */
 
 import { useNavigate } from "react-router-dom";
@@ -20,9 +20,9 @@ function LeftDrawer() {
   return (
     <div id="left-drawer" className="mdui-drawer">
       <div className={styles.drawerLogo}>
-        <i>Arknights</i>
+        <i>PRTS</i>
         <br />
-        <i>Terminal</i>
+        <i>终端</i>
       </div>
       <ul className="mdui-list" mdui-collapse="{accordion: true}">
         {/* navigate to "/" */}

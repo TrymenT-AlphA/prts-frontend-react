@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:49:46
- * Last modified  : 2022-12-29 03:00:34
+ * Last modified  : 2022-12-29 03:12:08
  */
 
 import { useNavigate } from "react-router-dom";
@@ -56,7 +56,7 @@ function StagesPermInnerPage(props) {
   // const tower_tr_03 = data.filter((stage) => stage.zoneId === "tower_tr_03");
   return (
     <>
-      <Toolbar currentPage="常驻关卡" />
+      <Toolbar currentPage="关卡总览（常驻关卡）" />
       <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         <div className="mdui-typo">
           <h4>资源收集</h4>

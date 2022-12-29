@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:49:46
- * Last modified  : 2022-12-28 22:54:58
+ * Last modified  : 2022-12-29 03:11:46
  */
 
 import { useState } from "react";
@@ -57,13 +57,9 @@ function StagesActiInnerPage(props) {
   // 隐藏
   return (
     <>
-      <Toolbar currentPage="关卡总览" />
+      <Toolbar currentPage="关卡总览（活动关卡）" />
       <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         <div className="mdui-typo">
-          <h2>主线关卡</h2>
-          <hr />
-          <h2>活动关卡</h2>
-          <hr />
         </div>
       </div>
     </>

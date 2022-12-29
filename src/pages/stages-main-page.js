@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:49:46
- * Last modified  : 2022-12-29 03:01:32
+ * Last modified  : 2022-12-29 03:11:54
  */
 
 import { useNavigate } from "react-router-dom";
@@ -43,7 +43,7 @@ function StagesMainInnerPage(props) {
 
   return (
     <>
-      <Toolbar currentPage="关卡总览" />
+      <Toolbar currentPage="关卡总览（主线关卡）" />
       <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         <div className="mdui-typo">
           {[
