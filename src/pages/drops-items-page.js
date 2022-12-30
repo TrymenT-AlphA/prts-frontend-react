@@ -7,11 +7,10 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:06
- * Last modified  : 2022-12-29 09:30:33
+ * Last modified  : 2022-12-31 00:26:12
  */
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import ErrorPage from "./error-page";
 import LoadingPage from "./loading-page";
 import Toolbar from "../components/toolbar";
@@ -43,7 +42,6 @@ function DropsItemsInnerPage(props) {
     .sort((item1, item2) => {
       return item1.classifyType < item2.classifyType ? -1 : 1;
     });
-  const navigate = useNavigate();
   const [classifyFilter, setClassifyFilter] = useState({
     材料: true,
     普通: true,
@@ -93,23 +91,57 @@ function DropsItemsInnerPage(props) {
         <div className="mdui-m-t-4">
           {data.map((item, key) => {
             return (
-              <QuickItem
-                key={key}
-                data={item}
-                mdui-tooltip={`{content: '${item.name}', position: 'top'}`}
-                className={
-                  classifyFilter[getItemClass(item.classifyType)] === false
-                    ? "mdui-hidden"
-                    : search !== null && !item.name.includes(search)
-                    ? "mdui-hidden"
-                    : ""
-                }
-                style={{
-                  width: "80px",
-                  height: "80px",
-                }}
-                onClick={() => navigate(`/drops/items/${item.id}`)}
-              />
+              <span key={key}>
+                <div className="mdui-dialog" id={item.id}>
+                  <div className="mdui-dialog-title">提示</div>
+                  <div className="mdui-dialog-content">
+                    <div className="mdui-valign">
+                      <QuickItem
+                        key={key}
+                        data={item}
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                        }}
+                      />
+                      <span className="tag mdui-color-lime-accent">
+                        {item.name}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mdui-dialog-actions mdui-dialog-actions-stacked">
+                    <a
+                      className="mdui-btn mdui-ripple"
+                      href={`/drops/items/${item.id}`}
+                    >
+                      前往掉落数据页面
+                    </a>
+                    <button
+                      className="mdui-btn mdui-ripple"
+                      mdui-dialog-close={1}
+                    >
+                      关闭窗口
+                    </button>
+                  </div>
+                </div>
+                <QuickItem
+                  key={key}
+                  data={item}
+                  mdui-tooltip={`{content: '${item.name}', position: 'top'}`}
+                  mdui-dialog={`{target: '#${item.id}'}`}
+                  className={
+                    classifyFilter[getItemClass(item.classifyType)] === false
+                      ? "mdui-hidden"
+                      : search !== null && !item.name.includes(search)
+                      ? "mdui-hidden"
+                      : ""
+                  }
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                  }}
+                />
+              </span>
             );
           })}
         </div>
@@ -168,4 +200,3 @@ export default DropsItemsPage;
 //     VOUCHER_PICK: true,
 //     VOUCHER_SKIN: true,
 //   });
-

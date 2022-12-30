@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:32:40 
- * Last modified  : 2022-12-28 16:54:58
+ * Last modified  : 2022-12-29 23:32:40
  */
 
 /* add some global styles here */
@@ -172,7 +172,7 @@
   color: #6d6d6d;
 }
 .rc_title {
-  color: #ffffff;
+  color: #000000;
 }
 .rc_subtitle {
   color: #ffc90e;

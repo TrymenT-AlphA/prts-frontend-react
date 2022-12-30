@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2022-12-28 21:25:45
+ * Last modified  : 2022-12-30 23:57:58
  */
 
 import { useState } from "react";
@@ -47,12 +47,12 @@ function CharactersPageInner(props) {
     });
   const navigate = useNavigate();
   const [rarityFilter, setRarityFilter] = useState({
-    "6★": true,
-    "5★": true,
-    "4★": true,
-    "3★": true,
-    "2★": true,
-    "1★": true,
+    "6⭐": true,
+    "5⭐": true,
+    "4⭐": true,
+    "3⭐": true,
+    "2⭐": true,
+    "1⭐": true,
   });
   const [professionFilter, setProfessionFilter] = useState({
     近卫干员: true,
@@ -144,10 +144,10 @@ function CharactersPageInner(props) {
         ),
       },
       {
-        value: `${char.rarity + 1}★`,
+        value: `${char.rarity + 1}⭐`,
         element: (
           <span className="tag mdui-color-red-600">
-            {`${char.rarity + 1}★`}
+            {`${char.rarity + 1}⭐`}
           </span>
         ),
       },

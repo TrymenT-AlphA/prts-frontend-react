@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:24:04
- * Last modified  : 2022-12-29 01:23:05
+ * Last modified  : 2022-12-30 12:04:19
  */
 
 import EmptyIcon from "./empty-icon";
@@ -25,6 +25,7 @@ import ArrowBackIcon from "./arrow-back-icon";
 import MenuIcon from "./menu-icon";
 import ExtensionIcon from "./extension-icon";
 import RecruitIcon from "./recruit-icon";
+import InfoIcon from "./info-icon";
 
 export {
   EmptyIcon,
@@ -42,4 +43,5 @@ export {
   MenuIcon,
   ExtensionIcon,
   RecruitIcon,
+  InfoIcon,
 };

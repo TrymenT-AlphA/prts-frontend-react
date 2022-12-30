@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:49:46
- * Last modified  : 2022-12-29 22:07:27
+ * Last modified  : 2022-12-29 23:10:54
  */
 
 import { useNavigate } from "react-router-dom";
@@ -58,7 +58,7 @@ function StagesActiInnerPage(props) {
             "act9mini",
             "act8sre",
             "act9sre",
-            "act15side",
+            // "act15side",
             "act10mini",
             "act16side",
             "act10sre",
@@ -76,13 +76,18 @@ function StagesActiInnerPage(props) {
             "act13sre",
             "act21side",
             "act14sre",
+            "act22side",
+            "act15sre",
           ].map((activity, key) => {
             const actiStages = data
               .filter((stage) => stage.activity === activity)
               .sort((stage1, stage2) => {
                 return stage1.id < stage2.id ? -1 : 1;
               });
-
+            if (actiStages.length === 0) {
+              // console.log(activity);
+              return null;
+            }
             return (
               <div key={key} className="mdui-panel" mdui-panel={1}>
                 <div
@@ -115,7 +120,7 @@ function StagesActiInnerPage(props) {
                             }
 
                             return (
-                              <tr>
+                              <tr key={key}>
                                 <th>
                                   <span className="tag mdui-color-indigo">
                                     {`区域${key + 1}`}

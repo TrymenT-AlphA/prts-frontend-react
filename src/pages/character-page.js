@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:44:41
- * Last modified  : 2022-12-29 18:55:01
+ * Last modified  : 2022-12-31 00:21:03
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -65,7 +65,7 @@ function CharacterPageInner(props) {
             <div className="mdui-typo">
               <hr />
               {/* tabs */}
-              <div className="mdui-tab" mdui-tab={1}>
+              <div className="mdui-tab mdui-tab-scrollable" mdui-tab={1}>
                 <a href="#char-tab1" className="mdui-tab-active mdui-ripple">
                   基本信息
                 </a>
