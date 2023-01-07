@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2022-12-30 23:57:58
+ * Last modified  : 2023-01-02 11:48:52
  */
 
 import { useState } from "react";
@@ -234,7 +234,7 @@ function CharactersPageInner(props) {
 
         {/* search */}
         <SearchBar
-          className="mdui-m-t-4"
+          className="mdui-m-t-4 mdui-textfield-expanded"
           placeholder="搜索干员名称/稀有度/职业/分支"
           onChange={(e) => {
             var content = e.target.value;

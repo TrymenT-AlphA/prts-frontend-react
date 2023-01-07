@@ -1,5 +1,6 @@
 const config = {
-  host: "http://127.0.0.1",
+  // host: "http://139.9.51.153",
+  host: "http://localhost",
   port: "3001",
   version: "v1",
 };

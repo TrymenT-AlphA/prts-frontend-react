@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:06
- * Last modified  : 2022-12-31 00:26:12
+ * Last modified  : 2023-01-02 11:49:06
  */
 
 import { useState } from "react";
@@ -74,7 +74,7 @@ function DropsItemsInnerPage(props) {
 
         {/* search */}
         <SearchBar
-          className="mdui-m-t-4"
+          className="mdui-m-t-4 mdui-textfield-expanded"
           placeholder="搜索物品名称"
           onChange={(e) => {
             var content = e.target.value;

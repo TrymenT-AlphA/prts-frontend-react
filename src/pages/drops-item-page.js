@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:47:06
- * Last modified  : 2022-12-29 18:31:00
+ * Last modified  : 2023-01-02 11:44:03
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -107,16 +107,19 @@ function DropsItemInnerPage(props) {
         },
         {
           value:
-            !drop.end.Valid && drop.times && drop.quantity ? "有效" : "无效",
-          element: !drop.end.Valid ? (
-            <span key={key} className="tag mdui-color-light-green">
-              有效
-            </span>
-          ) : (
-            <span key={key} className="tag mdui-color-red">
-              无效
-            </span>
-          ),
+            !drop.end.Valid && drop.times !== 0 && drop.quantity !== 0
+              ? "有效"
+              : "无效",
+          element:
+            !drop.end.Valid && drop.times !== 0 && drop.quantity !== 0 ? (
+              <span key={key} className="tag mdui-color-light-green">
+                有效
+              </span>
+            ) : (
+              <span key={key} className="tag mdui-color-red">
+                无效
+              </span>
+            ),
         },
       ];
     });
