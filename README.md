@@ -1,2 +1,7 @@
-# prts-frontend
-prts-frontend
+# Deploy
+
+## Windows Using docker
+
+```cmd
+./docker.bat
+```
