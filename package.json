@@ -6,14 +6,17 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "global": "^4.4.0",
     "highcharts": "^10.3.2",
     "highcharts-react-official": "^3.1.0",
     "htmr": "^1.0.2",
+    "lodash": "^4.17.21",
     "mdui": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

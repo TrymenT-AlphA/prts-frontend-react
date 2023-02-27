@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:32:40 
- * Last modified  : 2022-12-29 23:32:40
+ * Last modified  : 2023-02-28 00:53:28
  */
 
 /* add some global styles here */
@@ -275,4 +275,8 @@
 }
 .vc_endtime {
   color: #ff0327;
+}
+#akCanvasContainer {
+  background-image: url(background.jpg);
+  background-size: cover;
 }

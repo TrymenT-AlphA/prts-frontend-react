@@ -1,10 +1,11 @@
-FROM node:16
+FROM node
 WORKDIR /app
 
 COPY package.json .
 COPY yarn.lock .
 
 # Setup yarn
+RUN npm set registry https://mirrors.huaweicloud.com/repository/npm/
 RUN yarn install
 
 COPY . .
