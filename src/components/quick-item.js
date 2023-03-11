@@ -7,17 +7,18 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-28 11:24:42
- * Last modified  : 2022-12-28 16:25:41
+ * Last modified  : 2023-03-11 14:08:32
  */
 
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function QuickItem(props) {
   const { data } = props;
   const [isError, setIsError] = useState(false);
 
   return (
-    <img
+    <LazyLoadImage
       {...props}
       src={
         isError

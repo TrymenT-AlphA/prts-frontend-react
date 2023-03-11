@@ -7,11 +7,12 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-28 11:24:42
- * Last modified  : 2022-12-29 18:59:32
+ * Last modified  : 2023-03-11 14:11:24
  */
 
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ItemCost(props) {
   const { id } = props;
@@ -33,12 +34,12 @@ function ItemCost(props) {
       onClick={() => props.onClick()}
     >
       <div className="mdui-valign">
-        <img
-          src={`/asset/item/${data.iconId}.png`}
-          alt={data.name}
-          className="mdui-m-r-1"
-          style={{ width: "48px", height: "48px" }}
-        />
+          <LazyLoadImage
+            src={`/asset/item/${data.iconId}.png`}
+            alt={data.name}
+            className="mdui-m-r-1"
+            style={{ width: "48px", height: "48px" }}
+          />
         <div>
           <label className="mdui-textfield-label mdui-text-truncate">
             {data.name}

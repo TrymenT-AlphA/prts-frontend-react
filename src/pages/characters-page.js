@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:42:51
- * Last modified  : 2023-01-02 11:48:52
+ * Last modified  : 2023-03-11 14:11:28
  */
 
 import { useState } from "react";
@@ -24,6 +24,7 @@ import getServer from "../utils/getServer";
 import getProfession from "../utils/getProfession";
 import getSubProfession from "../utils/getSubProfession";
 import getHtml from "../utils/getHtml";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CharactersPage() {
   const { data, isLoading, error } = useGet(`${getServer()}/characters`);
@@ -133,12 +134,12 @@ function CharactersPageInner(props) {
               navigate(`/characters/${char.id}`);
             }}
           >
-            <img
-              className="mdui-list-item-avatar mdui-m-a-0"
-              src={`/asset/avatar/${char.id}.png`}
-              alt={char.id}
-              style={{ width: "40px", height: "40px" }}
-            />
+              <LazyLoadImage
+                className="mdui-list-item-avatar mdui-m-a-0"
+                src={`/asset/avatar/${char.id}.png`}
+                alt={char.id}
+                style={{ width: "40px", height: "40px" }}
+              />
             <span className="mdui-m-l-1">{char.name}</span>
           </div>
         ),
@@ -176,7 +177,7 @@ function CharactersPageInner(props) {
 
   return (
     <>
-      <Toolbar currentPage={`干员总览`}/>
+      <Toolbar currentPage={`干员总览`} />
       <div className="mdui-container mdui-p-t-4 mdui-p-b-5">
         {/* first check group */}
         <CheckbtnGroup

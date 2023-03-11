@@ -7,12 +7,13 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-28 11:24:42
- * Last modified  : 2022-12-28 16:24:56
+ * Last modified  : 2023-03-11 14:07:06
  */
 
 import { useState } from "react";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Item(props) {
   const { id } = props;
@@ -28,7 +29,7 @@ function Item(props) {
   }
 
   return (
-    <img
+    <LazyLoadImage
       {...props}
       src={
         isError

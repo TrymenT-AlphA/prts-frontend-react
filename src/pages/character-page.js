@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:44:41
- * Last modified  : 2022-12-31 00:21:03
+ * Last modified  : 2023-03-11 14:11:26
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -21,6 +21,7 @@ import getProfession from "../utils/getProfession";
 import getSubProfession from "../utils/getSubProfession";
 import getHtml from "../utils/getHtml";
 import getSVG from "../utils/getSVG";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CharacterPage() {
   const { id } = useParams();
@@ -49,11 +50,11 @@ function CharacterPageInner(props) {
         <div className="mdui-card">
           {/* card header */}
           <div className="mdui-card-header">
-            <img
-              src={`/asset/avatar/${data.id}.png`}
-              alt={data.name}
-              className="mdui-card-header-avatar"
-            />
+              <LazyLoadImage
+                src={`/asset/avatar/${data.id}.png`}
+                alt={data.name}
+                className="mdui-card-header-avatar"
+              />
             <div className="mdui-card-header-title">{data.name}</div>
             <div className="mdui-card-header-subtitle">
               {getSubProfession(data.subProfessionId)}
@@ -272,11 +273,11 @@ function CharacterPageInner(props) {
                             <tr key={key}>
                               <th>
                                 <div className="mdui-valign">
-                                  <img
-                                    src={`/asset/building_skill/${buildingSkill.name}.png`}
-                                    alt={buildingSkill.icon}
-                                    className="mdui-list-item-avatar mdui-m-a-0"
-                                  />
+                                    <LazyLoadImage
+                                      src={`/asset/building_skill/${buildingSkill.name}.png`}
+                                      alt={buildingSkill.icon}
+                                      className="mdui-list-item-avatar mdui-m-a-0"
+                                    />
                                 </div>
                               </th>
                               <td>
@@ -338,11 +339,11 @@ function CharacterPageInner(props) {
                               <tr>
                                 <td rowSpan={2}>
                                   <div className="mdui-valign">
-                                    <img
-                                      src={`/asset/skill/skill_icon_${skill.iconId}.png`}
-                                      alt={skill.iconId}
-                                      className="mdui-list-item-avatar mdui-m-a-0"
-                                    />
+                                      <LazyLoadImage
+                                        src={`/asset/skill/skill_icon_${skill.iconId}.png`}
+                                        alt={skill.iconId}
+                                        className="mdui-list-item-avatar mdui-m-a-0"
+                                      />
                                   </div>
                                 </td>
                                 <td>

@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:32:29
- * Last modified  : 2023-02-28 01:06:52
+ * Last modified  : 2023-03-11 14:12:18
  */
 
 import Toolbar from "../components/toolbar";
@@ -17,7 +17,7 @@ import DameDaneParticle from "../utils/damedane";
 function HomePage() {
   useEffect(() => {
     var canvas = document.getElementById("akCanvas");
-    var damedane = new DameDaneParticle(canvas, {
+    new DameDaneParticle(canvas, {
       src: "./logo/island.png",
       renderX: 100,
       renderY: 100,

@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:46:05
- * Last modified  : 2022-12-29 13:43:51
+ * Last modified  : 2023-03-11 14:11:31
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ import Toolbar from "../components/toolbar";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
 import getHtml from "../utils/getHtml";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function EnemyPage() {
   const { id } = useParams();
@@ -44,11 +45,11 @@ function EnemyInnerPage(props) {
         <div className="mdui-card">
           {/* card header */}
           <div className="mdui-card-header">
-            <img
-              src={`/asset/enemy/${data.id}.png`}
-              alt={data.name}
-              className="mdui-card-header-avatar"
-            />
+              <LazyLoadImage
+                src={`/asset/enemy/${data.id}.png`}
+                alt={data.name}
+                className="mdui-card-header-avatar"
+              />
             <div className="mdui-card-header-title">{data.name}</div>
             <div className="mdui-card-header-subtitle">
               {data.level === "NORMAL"

@@ -9,7 +9,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:28:24
- * Last modified  : 2022-12-27 08:57:49
+ * Last modified  : 2023-03-11 14:11:59
  */
 
 import mdui from "mdui";
@@ -18,7 +18,7 @@ import * as React from "react";
 function useMdui(states) {
   React.useEffect(() => {
     mdui.mutation();
-  }, states);
+  }, [states]);
 }
 
 export default useMdui;

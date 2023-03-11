@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:48:43
- * Last modified  : 2022-12-29 18:53:24
+ * Last modified  : 2023-03-11 14:11:36
  */
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ import Item from "../components/item";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
 import getHtml from "../utils/getHtml";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function StagePage() {
   const { id } = useParams();
@@ -49,7 +50,7 @@ function StageInnerPage(props) {
             <div className="mdui-card-primary-subtitle">{data.code}</div>
             <div className="mdui-typo">
               <div className="mdui-m-t-4">
-                <img
+                <LazyLoadImage
                   src={`/asset/map/${data.id}.png`}
                   alt={data.id}
                   className="mdui-shadow-2"
@@ -233,7 +234,7 @@ function StageInnerPage(props) {
                         <tr key={key}>
                           <td>
                             <div className="mdui-valign mdui-ripple">
-                              <img
+                              <LazyLoadImage
                                 className="mdui-list-item-avatar mdui-m-a-0"
                                 src={`/asset/enemy/${enemy.id}.png`}
                                 alt={enemy.name}

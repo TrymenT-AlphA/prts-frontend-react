@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:50:43
- * Last modified  : 2022-12-31 00:01:53
+ * Last modified  : 2023-03-11 14:11:33
  */
 
 import { useState } from "react";
@@ -22,7 +22,7 @@ import getServer from "../utils/getServer";
 import getProfession from "../utils/getProfession";
 import getHtml from "../utils/getHtml";
 import getCombine from "../utils/getCombine";
-// import { Navigate, useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function RecruitPage() {
   const { data, isLoading, error } = useGet(`${getServer()}/characters`);
@@ -531,15 +531,15 @@ function RecruitInnerPage(props) {
                       <td className="mdui-typo">
                         {strategy.chars.map((char, key) => {
                           return (
-                            <img
-                              key={key}
-                              className="mdui-img-circle"
-                              src={`/asset/avatar/${char.id}.png`}
-                              alt={char.id}
-                              style={{ width: "40px", height: "40px" }}
-                              mdui-tooltip={`{content: '${char.name}', position: 'top'}`}
-                              // onClick={() => navigate(`/characters/${char.id}`)}
-                            />
+                              <LazyLoadImage
+                                key={key}
+                                className="mdui-img-circle"
+                                src={`/asset/avatar/${char.id}.png`}
+                                alt={char.id}
+                                style={{ width: "40px", height: "40px" }}
+                                mdui-tooltip={`{content: '${char.name}', position: 'top'}`}
+                                // onClick={() => navigate(`/characters/${char.id}`)}
+                              />
                           );
                         })}
                       </td>

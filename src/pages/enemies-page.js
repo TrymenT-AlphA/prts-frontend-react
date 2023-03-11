@@ -7,7 +7,7 @@
  * @author Alice Remake
  *
  * Created at     : 2022-12-27 00:45:25
- * Last modified  : 2023-01-02 11:49:29
+ * Last modified  : 2023-03-11 14:11:29
  */
 
 import { useState } from "react";
@@ -22,6 +22,7 @@ import DataTable from "../components/data-table";
 import useGet from "../hooks/useGet";
 import getServer from "../utils/getServer";
 import getHtml from "../utils/getHtml";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function EnemiesPage() {
   const { data, isLoading, error } = useGet(`${getServer()}/enemies`);
@@ -110,12 +111,12 @@ function EnemiesInnerPage(props) {
               navigate(`/enemies/${enemy.id}`);
             }}
           >
-            <img
-              className="mdui-list-item-avatar mdui-m-a-0"
-              src={`/asset/enemy/${enemy.id}.png`}
-              alt={enemy.id}
-              style={{ width: "40px", height: "40px" }}
-            />
+              <LazyLoadImage
+                className="mdui-list-item-avatar mdui-m-a-0"
+                src={`/asset/enemy/${enemy.id}.png`}
+                alt={enemy.id}
+                style={{ width: "40px", height: "40px" }}
+              />
             <span className="mdui-m-l-1">{enemy.name}</span>
           </div>
         ),
