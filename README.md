@@ -2,7 +2,7 @@
 
 ## Introduction
 
-a website build with react
+a website build with react, the frontend of [prts-backend-go](https://github.com/TrymenT-AlphA/prts-backend-go)
 
 ## Deploy
 
